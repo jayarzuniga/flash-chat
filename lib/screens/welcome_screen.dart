@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
+
+  static String id = 'welcome_screen';
+
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
@@ -20,13 +23,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               children: <Widget>[
                 Container(
                   child: Image.asset('images/logo.png'),
-                  height: 60.0,
+                  height: 80.0,
                 ),
                 Text(
                   'Flash Chat',
                   style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
+                    color: Colors.black45
                   ),
                 ),
               ],
