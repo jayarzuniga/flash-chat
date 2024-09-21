@@ -24,12 +24,11 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       vsync: this,
     );
     animation = ColorTween(
-      begin: Colors.yellowAccent.shade200,
-      end: Colors.white54,
+      begin: Colors.yellowAccent.shade100,
+      end: Colors.white,
     ).animate(controller);
 
     controller.forward();
-
     controller.addListener(() {
       setState(() {});
     });
@@ -81,7 +80,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             RoundedButton(
                 title: 'Register',
                 color: Colors.blueAccent,
-                onPressed: (){Navigator.pushNamed(context, RegistrationScreen.id);}
+                onPressed: (){
+                  Navigator.pushNamed(context, RegistrationScreen.id);
+                }
             ),
           ],
         ),
