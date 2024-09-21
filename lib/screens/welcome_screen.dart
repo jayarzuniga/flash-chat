@@ -1,31 +1,37 @@
 import 'package:flash_chat/screens/login_screen.dart';
 import 'package:flash_chat/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flash_chat/components/rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
-
   static const String id = 'welcome_screen';
 
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin{
-
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation animation;
 
   @override
   void initState() {
     super.initState();
-    controller = AnimationController(duration: Duration(seconds: 1), vsync: this,);
-    animation = ColorTween(begin: Colors.yellowAccent.shade200, end: Colors.blueGrey,).animate(controller);
+    controller = AnimationController(
+      duration: Duration(seconds: 1),
+      vsync: this,
+    );
+    animation = ColorTween(
+      begin: Colors.yellowAccent.shade200,
+      end: Colors.white54,
+    ).animate(controller);
 
     controller.forward();
 
-    controller.addListener((){
-        setState(() {
-        });
+    controller.addListener(() {
+      setState(() {});
     });
   }
 
@@ -48,54 +54,34 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                     height: 80.0,
                   ),
                 ),
-                Text(
-                  'Flash Chat',
-                  style: TextStyle(
-                    fontSize: 45.0,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.black45
-                  ),
+                AnimatedTextKit(
+                  animatedTexts: [
+                    TypewriterAnimatedText(
+                      'Flash Chat',
+                      textStyle: TextStyle(
+                          fontSize: 45.0,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.black87),
+                      speed: const Duration(milliseconds: 500),
+                    ),
+                  ],
                 ),
               ],
             ),
             SizedBox(
               height: 48.0,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                elevation: 5.0,
-                color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, LoginScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Log In',
-                  ),
-                ),
-              ),
+            RoundedButton(
+              color: Colors.lightBlueAccent,
+              title: 'Log In',
+              onPressed: (){
+                Navigator.pushNamed(context, LoginScreen.id);
+              },
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
+            RoundedButton(
+                title: 'Register',
                 color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Register',
-                  ),
-                ),
-              ),
+                onPressed: (){Navigator.pushNamed(context, RegistrationScreen.id);}
             ),
           ],
         ),
@@ -103,3 +89,5 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
     );
   }
 }
+
+
