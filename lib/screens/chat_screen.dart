@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flash_chat/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flash_chat/constants.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class ChatScreen extends StatefulWidget {
   static const String id = 'chat_screen';
@@ -10,6 +11,8 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+
+  bool showSpinner = false;
   final _auth = FirebaseAuth.instance;
   User? loggedInUser;
 
@@ -40,8 +43,14 @@ class _ChatScreenState extends State<ChatScreen> {
           IconButton(
               icon: Icon(Icons.close),
               onPressed: () {
+                setState(() {
+                  showSpinner = true;
+                });
                 _auth.signOut();
                 Navigator.pop(context, WelcomeScreen.id);
+                setState(() {
+                  showSpinner = false;
+                });
               }),
         ],
         title: Text('⚡️Chat'),
