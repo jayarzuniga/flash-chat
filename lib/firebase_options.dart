@@ -31,7 +31,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
+              'you can reconfigure this by running the FlutterFire CLI again.',
         );
       default:
         throw UnsupportedError(
@@ -41,48 +41,48 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB2fyqPW7H0fOovyuD1KUSMIQpH7neOaDA',
-    appId: '1:316442417259:web:cd8fd4242a2a04e7d7b92e',
-    messagingSenderId: '316442417259',
-    projectId: 'flash-chat-1a6e9',
-    authDomain: 'flash-chat-1a6e9.firebaseapp.com',
-    storageBucket: 'flash-chat-1a6e9.appspot.com',
-    measurementId: 'G-Y5WP2WQ49M',
+    apiKey: 'abc',
+    appId: '123',
+    messagingSenderId: 'asd',
+    projectId: '123',
+    authDomain: 'abc',
+    storageBucket: 'abac',
+    measurementId: 'G-aca',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDff5BxWFDsEZOFiBs23qDSveM9a3P5dEk',
-    appId: '1:316442417259:android:b9df1f7c11f436c4d7b92e',
-    messagingSenderId: '316442417259',
-    projectId: 'flash-chat-1a6e9',
-    storageBucket: 'flash-chat-1a6e9.appspot.com',
+    apiKey: 'abc',
+    appId: '123',
+    messagingSenderId: 'asd',
+    projectId: 'asd',
+    storageBucket: 'asd',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBQqD5wE8l3QtoKTCWOp9ao6GN9aiXKWsE',
-    appId: '1:316442417259:ios:a6448cafaf15fa55d7b92e',
-    messagingSenderId: '316442417259',
-    projectId: 'flash-chat-1a6e9',
-    storageBucket: 'flash-chat-1a6e9.appspot.com',
-    iosBundleId: 'com.example.flashChat',
+    apiKey: 'abc',
+    appId: '123',
+    messagingSenderId: 'asd',
+    projectId: 'asd',
+    storageBucket: 'asd',
+    iosBundleId: 'asd',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBQqD5wE8l3QtoKTCWOp9ao6GN9aiXKWsE',
-    appId: '1:316442417259:ios:a6448cafaf15fa55d7b92e',
-    messagingSenderId: '316442417259',
-    projectId: 'flash-chat-1a6e9',
-    storageBucket: 'flash-chat-1a6e9.appspot.com',
-    iosBundleId: 'com.example.flashChat',
+    apiKey: 'abc',
+    appId: '123',
+    messagingSenderId: 'asd',
+    projectId: 'asd',
+    storageBucket: 'asd',
+    iosBundleId: 'casdt',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyB2fyqPW7H0fOovyuD1KUSMIQpH7neOaDA',
-    appId: '1:316442417259:web:5cd3c5ecd68f6fbed7b92e',
-    messagingSenderId: '316442417259',
-    projectId: 'flash-chat-1a6e9',
-    authDomain: 'flash-chat-1a6e9.firebaseapp.com',
-    storageBucket: 'flash-chat-1a6e9.appspot.com',
-    measurementId: 'G-138RYGVWS5',
+    apiKey: 'abc',
+    appId: '123',
+    messagingSenderId: 'asd',
+    projectId: 'asd-asd-asd',
+    authDomain: 'asd-chat-asd.asd.com',
+    storageBucket: 'asd-asd-asd.appspot.com',
+    measurementId: 'G-asd',
   );
 }
